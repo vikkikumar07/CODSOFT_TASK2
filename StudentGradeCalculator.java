@@ -3,7 +3,7 @@ import java.util.Scanner;
     
 public class StudentGradeCalculator {
     final int OUT_OF_MARKS = 100;
-    
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("==== STUDENT GRADE CALCULATOR ====");
@@ -12,20 +12,25 @@ public class StudentGradeCalculator {
 
         int totalMarks = 0;
 
+        // input all subject form Student
         for(int i = 1; i<=subjects; i++) {
             System.out.print("Enter Marks of Subject "+i+" (0 - 100): ");
             int marks = input.nextInt();
 
+            // cheak a valid marks
             while(marks < 0 || marks > 100) {
                 System.out.print("Invalid! Enter marks between 0 and 100: ");
                 marks = input.nextInt();
             }
 
+            // add a total marks
             totalMarks += marks;
         }
         
+        // find a average value 
         double average = (double)totalMarks / subjects;
 
+        // cheak a Student marks according grade
         String grade;
         if(average >= 90) {
             grade = "A+";
@@ -40,6 +45,8 @@ public class StudentGradeCalculator {
         } else {
             grade = "F";
         }
+
+        // show all result
         System.out.println();
         System.out.println(" ===== RESULT ===== ");
         System.out.println("Total Marks "+ totalMarks + " / "+ (subjects * 100));
