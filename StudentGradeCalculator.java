@@ -27,7 +27,7 @@ public class StudentGradeCalculator {
             totalMarks += marks;
         }
         
-        // find a average value 
+        // find an average value 
         double average = (double)totalMarks / subjects;
 
         // cheak a Student marks according grade
